@@ -1,10 +1,11 @@
-// import Sidebar from "@/components/Sidebar";
-// import { SidebarRoutes } from "@/config/routes";
+import Board from "@/components/routes/Board";
+import CircularProgressComp from "@/components/ui/circularprogress";
+import { Button } from "@nextui-org/button";
 
-export default async function Home() {
+export default function Home() {
   return (
-    <div>
-      <h1>hello</h1>
+    <div className="p-24">
+      <Board />
     </div>
   );
 }

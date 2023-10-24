@@ -1,10 +1,9 @@
-import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import { SidebarRoutes } from "@/config/routes";
 import { ToastProvider } from "@/providers/ToastProvider";
 import SidebarProvider from "@/providers/SidebarProvider";
+import { NextUiProviders } from "@/providers/NextUIProvider";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -25,10 +24,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} max-w-[120rem] mx-auto`}>
         <ToastProvider />
-        <main className="h-full border w-full flex ">
-          <SidebarProvider />
-          <section>{children}</section>
-        </main>
+        <NextUiProviders>
+          <main className="w-full flex border ">
+            <SidebarProvider />
+            <section className="flex-1">{children}</section>
+          </main>
+        </NextUiProviders>
       </body>
     </html>
   );
