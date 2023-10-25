@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3sthlmeaststorage7c245c11",
+  "bucketName": "sthlm-east-storage-7c245c11",
+  "policyUUID": "e554c75d",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

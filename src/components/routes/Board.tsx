@@ -12,7 +12,7 @@ export default function Board() {
   return (
     <div className="">
       <div className=" w-full flex  md:flex-row  flex-col-reverse justify-center sm:justify-between items-center gap-5">
-        <Card className="lg;max-w-[24rem] lg:w-[26rem] flex flex-row border-none  bg-secondary-500">
+        <Card className="max-w-[46rem]  flex flex-row border-none  bg-secondary-500">
           <CardBody className="w-1/3">
             <CircularProgress
               classNames={{
