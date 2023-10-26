@@ -1,7 +1,7 @@
 // Sidebar component
 import { useState } from "react";
 import Link from "next/link";
-import { IRoute, SidebarRoutes } from "@/config/routes";
+import { IRoute } from "@/config/routes";
 import { usePathname } from "next/navigation";
 
 const Sidebar = ({ routes }: { routes: IRoute[] }) => {
@@ -9,12 +9,12 @@ const Sidebar = ({ routes }: { routes: IRoute[] }) => {
   const pathname = usePathname();
 
   return (
-    <section className="space-y-8 border h-screen  hide overflow-y-scroll py-5 md:w-3/12 hidden md:flex flex-col lg:w-2/12 text-slate-500">
-      <div className="px-8 flex items-center justify-center font-bold">
+    <section className="space-y-4 border h-screen hide overflow-y-scroll py-5 md:w-3/12 absolute sm:relative z-50 hidden bg-white md:flex flex-col lg:w-2/12 text-slate-500">
+      <div className="px-8 flex items-center justify-center font-bold pb-8 pt-2">
         Sthlm-East
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
-        <ul className="flex flex-col gap-3 text-sm font-semibold">
+        <ul className="flex flex-col gap-2 text-sm font-semibold">
           {routes.map((route, index) => {
             const isActive = pathname === route.path;
             return (

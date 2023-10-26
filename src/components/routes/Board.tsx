@@ -4,15 +4,14 @@ import {
   Card,
   CardBody,
   CardFooter,
-  Chip,
   Button,
 } from "@nextui-org/react";
 
 export default function Board() {
   return (
     <div className="">
-      <div className=" w-full flex  md:flex-row  flex-col-reverse justify-center sm:justify-between items-center gap-5">
-        <Card className="max-w-[46rem]  flex flex-row border-none  bg-secondary-500">
+      <div className=" w-full flex sm:flex-row flex-col-reverse justify-center sm:justify-between items-center gap-5">
+        <Card className="max-w-[20rem] md:w-[25rem] lg:max-w-[28rem] flex flex-row border-none  bg-secondary-500">
           <CardBody className="w-1/3">
             <CircularProgress
               classNames={{

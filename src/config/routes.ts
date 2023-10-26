@@ -23,7 +23,7 @@ interface IRoute {
 const SidebarRoutes: IRoute[] = [
   {
     path: "/",
-    label: "The Board",
+    label: "Board",
     icon: BoardIcon,
   },
   {

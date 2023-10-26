@@ -1,19 +1,7 @@
 "use client";
 
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
 
 export const ToastProvider = () => {
-  return (
-    <ToastContainer
-      position="top-right"
-      autoClose={3500}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-    />
-  );
+  return <Toaster />;
 };
