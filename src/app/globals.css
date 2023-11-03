@@ -50,5 +50,6 @@ nav header {
 [type="submit"],
 button {
   -webkit-appearance: button;
+  background-color: var(--amplify-components-button-primary-background-color);
   background-image: none;
 }
