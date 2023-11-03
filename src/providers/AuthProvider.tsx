@@ -2,13 +2,10 @@
 import { useAuthStore } from "@/hooks/use-auth-store";
 
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
-import { Amplify, Hub } from "aws-amplify";
+import { Amplify } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
-
 import awsconfig from "@/aws-exports";
 import { X } from "lucide-react";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
 Amplify.configure(awsconfig);
 
 const components = {
