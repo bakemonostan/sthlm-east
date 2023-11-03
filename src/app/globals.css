@@ -41,7 +41,14 @@ body::-webkit-scrollbar {
   overflow: -moz-scrollbars-none;
 }
 
-
-nav header{
+nav header {
   max-width: 100% !important;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  -webkit-appearance: button;
+  background-image: none;
 }
