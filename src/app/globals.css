@@ -45,10 +45,7 @@ nav header {
   max-width: 100% !important;
 }
 
-[type="button"],
-[type="reset"],
-[type="submit"],
-button {
+.amplify-button--primary {
   -webkit-appearance: button;
   background-color: var(--amplify-components-button-primary-background-color);
   background-image: none;
