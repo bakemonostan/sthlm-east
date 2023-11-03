@@ -19,8 +19,8 @@ export default function FolderCard({
   folderSize,
 }: FolderCardProps) {
   return (
-    <Card className="max-w-[20rem] w-full flex-1  p-3 px-4 space-y-2">
-      <Link href={path ?? "/"}>
+    <Card className="max-w-[20rem] w-full flex-1  p-3 px-4">
+      <Link href={path ?? "/"} className=" space-y-2">
         <CardHeader className="flex items-center  justify-between p-0">
           <div>
             <FolderIcon />
