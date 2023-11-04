@@ -1,12 +1,27 @@
 // Sidebar component
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { IRoute } from "@/config/routes";
 import { usePathname } from "next/navigation";
+import { useAuthStore } from "@/hooks/use-auth-store";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 const Sidebar = ({ routes }: { routes: IRoute[] }) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const { isLoggedIn } = useAuthStore();
+
+  const { authStatus } = useAuthenticator((context) => [context.route]);
+
+  const [filteredRoutes, setFilteredRoutes] = useState(routes);
+  console.log(authStatus);
+  useEffect(() => {
+    setFilteredRoutes(
+      authStatus === "authenticated"
+        ? routes
+        : routes.filter((route) => route.path !== "/")
+    );
+  }, [authStatus, routes]);
 
   return (
     <section className="space-y-4 border h-screen hide overflow-y-scroll py-5 md:w-3/12 absolute sm:relative z-50 hidden bg-white md:flex flex-col lg:w-2/12 text-slate-500">
@@ -15,8 +30,9 @@ const Sidebar = ({ routes }: { routes: IRoute[] }) => {
       </div>
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <ul className="flex flex-col gap-2 text-sm font-semibold">
-          {routes.map((route, index) => {
+          {filteredRoutes.map((route, index) => {
             const isActive = pathname === route.path;
+
             return (
               <Link
                 href={route.path}
