@@ -65,7 +65,7 @@ export default function NavbarComponent() {
         <NavbarContent justify="end">
           {!user && (
             <Button
-              className="  bg-black text-white font-semibold"
+              className="  bg-secondary-500 text-white font-semibold"
               onClick={() => useAuthStore.setState({ showSignInModal: true })}
             >
               Sign in as an Admin
