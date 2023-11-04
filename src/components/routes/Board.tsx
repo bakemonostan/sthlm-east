@@ -1,5 +1,4 @@
 "use client";
-import { useAuthenticator } from "@aws-amplify/ui-react";
 import {
   CircularProgress,
   Card,
@@ -10,8 +9,6 @@ import {
 import { redirect } from "next/navigation";
 
 export default function Board() {
-  const { route } = useAuthenticator((context) => [context.route]);
-  route !== "authenticated" && redirect("/minutes");
   return (
     <div className="">
       <div className=" w-full flex sm:flex-row flex-col-reverse justify-center sm:justify-between items-center gap-5">

@@ -1,8 +1,8 @@
 "use client";
 import { useAuthStore } from "@/hooks/use-auth-store";
 
-import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
-import { Amplify } from "aws-amplify";
+import { Authenticator } from "@aws-amplify/ui-react";
+import { Amplify, Auth } from "aws-amplify";
 import "@aws-amplify/ui-react/styles.css";
 import awsconfig from "@/aws-exports";
 import { X } from "lucide-react";

@@ -1,9 +1,10 @@
+"use client";
+
+import PleaseLogin from "@/components/PleaseLogin";
 import Board from "@/components/routes/Board";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen">
-      <Board />
-    </div>
-  );
+  const { route } = useAuthenticator((context) => [context.route]);
+  return <>{route === "authenticated" ? <Board /> : <PleaseLogin />}</>;
 }

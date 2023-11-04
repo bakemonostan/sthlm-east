@@ -20,25 +20,23 @@ import {
 } from "@nextui-org/react";
 import { SearchIcon } from "lucide-react";
 import { useAuthStore } from "@/hooks/use-auth-store";
-import { Auth } from "aws-amplify";
 import { useAuthenticator } from "@aws-amplify/ui-react";
 import { redirect } from "next/navigation";
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const { showSignInModal, isLoggedIn } = useAuthStore();
-  const { route, user, authStatus, signOut } = useAuthenticator((context) => [
+  const { user, authStatus, signOut } = useAuthenticator((context) => [
     context.route,
   ]);
+
   useEffect(() => {
     if (authStatus === "authenticated") {
-      useAuthStore.setState({ isLoggedIn: true });
       redirect("/");
     }
     if (authStatus === "unauthenticated") {
-      useAuthStore.setState({ isLoggedIn: false });
+      redirect("/minutes");
     }
-  }, [isLoggedIn]);
+  }, []);
 
   const menuItems = ["Board", "Minutes", "Membership List", "Finance"];
 
