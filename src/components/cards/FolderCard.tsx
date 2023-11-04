@@ -8,8 +8,8 @@ import Link from "next/link";
 type FolderCardProps = {
   path?: string;
   label: string;
-  numberOfFiles: string;
-  folderSize: string;
+  numberOfFiles?: string;
+  folderSize?: string;
 };
 
 export default function FolderCard({

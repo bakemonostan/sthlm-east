@@ -33,7 +33,10 @@ export default function RootLayout({
               <SidebarProvider />
               <section className="flex-1 md:w-9/12 mx-auto lg:w-10/12">
                 <Navbar />
-                <div className="container pt-12"> {children}</div>
+                <div className="container pt-12 h-screen md:h-auto">
+                  {" "}
+                  {children}
+                </div>
               </section>
             </main>
           </AuthProvider>

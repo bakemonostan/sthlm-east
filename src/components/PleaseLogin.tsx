@@ -5,7 +5,7 @@ import { Button } from "@nextui-org/react";
 export default function PleaseLogin() {
   const { user } = useAuthenticator((context) => [context.route]);
   return (
-    <div className="py-10 flex gap-28 items-center md:items-start justify-between flex-col h-full ">
+    <div className="py-10 flex gap-28 items-center md:items-start md:justify-between flex-col h-full ">
       <h1 className="text-xl">
         Sorry, you need to be logged in as an admin to view this page 😢
       </h1>
